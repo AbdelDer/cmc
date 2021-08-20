@@ -27,6 +27,16 @@ jQuery(function ($){
       }
     )
 
+    $('#image-map area').on('click', function(e) {
+      e.preventDefault();
+      const id = $(this).attr('href');
+      $(id).addClass('show').siblings().removeClass('show');
+      const slideID = $(this).data('slideid');
+      const slideTo = $('#map-slider .slide-item[data-slideid="'+ slideID +'"]').data('slick-index');
+     $('#map-slider').slick('slickGoTo', slideTo);
+
+    })
+
   });
 
 });

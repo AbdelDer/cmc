@@ -63,3 +63,38 @@
         }
     }
 }
+
+.region-filter{
+    .map-container{
+        position: relative;
+        .image-mapper-svg{
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            z-index: 2;
+            position: absolute;
+        }
+        .image-map{
+            position: relative;
+            z-index: 2;
+        }
+        .image-pieces{
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            z-index: 1;
+            img{
+                position: absolute;
+                left: 0;
+                top: 0;
+                opacity: 0;
+                &.show{
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
