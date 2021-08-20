@@ -1,0 +1,72 @@
+.nos-offres{
+    padding-top: 20px;
+    .block-header{
+        max-width: 400px;
+        .sub-title{
+            font-size: 20px;
+            max-width: 300px;
+            @include fontFamily(700);
+        }
+    }
+    .slider-offre{
+        padding-top: 40px;
+        margin-left: -10px;
+        margin-right: -10px;
+        .slide-wrapper{
+            text-decoration: none;
+            display: block;
+            max-width: 260px;
+            padding: 10px;
+        }
+        
+        .offre-item{
+            overflow: hidden;
+            position: relative;
+            @extend %transition-med;
+            .details{
+                position: absolute;
+                left: 15px;
+                right: 15px;
+                bottom: 15px;
+                padding: 15px;
+                text-align: center;
+                background: rgba(#FFF, .7);
+                @extend %boxshadow_3x;
+                color: $blue;
+                @include fontFamily(600);
+                text-transform: uppercase;
+                font-size: 22px;
+                min-height: 60px;
+                @extend %display-flex;
+                @include alignItems(center);
+                @include justifyContentCenter();
+            }
+            &:hover{
+                @extend %boxshadow_4x;
+            }
+        }
+
+        .slick-arrow{
+            opacity: 0;
+            visibility: hidden;
+            &.slick-prev{
+                transform: translateX(50px);
+                -webkit-transform: translateX(50px);
+            }
+            
+            &.slick-next{
+                transform: translateX(-50px);
+                -webkit-transform: translateX(-50px);
+            }
+        }
+
+        &:hover{
+            .slick-arrow{
+                opacity: 1;
+                visibility: visible;
+                transform: translateX(0px);
+                -webkit-transform: translateX(0px);
+            }
+        }
+    }
+}

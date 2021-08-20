@@ -1,0 +1,117 @@
+.listing-resouce{
+  background: #FFF;
+  padding: 50px 0;
+  .resource-item{
+    background: #FFF;
+    padding: 15px;
+    border-radius: 5px;
+    @extend %transition-slew;
+    margin-bottom: 30px;
+    a{
+      text-decoration: none;
+      &:hover{
+        text-decoration: none;
+      }
+    }
+    @extend %boxshadow_2x;
+    .img-container{
+      text-align: center;
+      margin-bottom: 15px;
+      position: relative;
+      .img-thumbnail{
+        @extend %transition-slew;
+      }
+      .img-on-hover{
+        position: absolute;
+        @include center;
+        opacity: 0;
+        width: auto;
+        max-width: 100%;
+        max-height: 100%;
+        @extend %transition-med;
+      }
+    }
+    .downloads{
+      display: inline-block;
+      font-size: 13px;
+      //background: $secondary;
+      color: $primary;
+      //padding: 4px 8px;
+      margin-bottom: 0px;
+      border-radius: 10px;
+    }
+    .title{
+      margin-top: 0px;
+      font-size: 16px;
+      color: #222;
+      line-height: 1.5;
+      font-weight: 600;
+      margin-bottom: 0;
+      min-height: 48px;
+    }
+
+    &:hover{
+      @extend %boxshadow_5x;
+    }
+
+    &.on-hover{
+      .img-container{
+        .img-thumbnail{
+          opacity: 0;
+        }
+        .img-on-hover{
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+.listing-resouce-expose{
+  display: none;
+}
+
+.pager{
+  padding-top: 30px;
+  ul{
+    list-style: none;
+    @extend %display-flex;
+    @extend %justify-content-center;
+    @extend %align-items-center;
+
+      .pager__item{
+        margin: 3px;
+        a{
+          display: inline-block;
+          min-width: 40px;
+          height: 40px;
+          line-height: 40px;
+          text-align: center;
+          background:  #FFF;
+          border-radius: 33px;
+          color: #222;
+          text-decoration: none;
+          padding-left: 5px;
+          padding-right: 5px;
+          @extend %boxshadow;
+          @extend %transition-med;
+
+          &:hover{
+            @extend %boxshadow_5x;
+            background: $primary;
+            color: #FFF;
+          }
+        }
+        &.pager__item--next,
+        &.pager__item--last,
+        &.pager__item--first,
+        &.pager__item--previous{
+          a{
+            padding-left: 10px;
+            padding-right: 10px;
+          }
+        }
+      }
+
+  }
+}

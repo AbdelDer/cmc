@@ -1,0 +1,202 @@
+
+$global-left: $left;
+$global-right: $right;
+
+@mixin pos($top: none, $right: none, $bottom: none, $left: none) {
+    @if $top != none {
+        top: $top;
+    }
+    
+    @if $right != none {
+        #{$global-right}: $right;
+    }
+
+    @if $bottom != none {
+        bottom: $bottom;
+    }
+
+    @if $left != none {
+        #{$global-left}: $left;
+    }
+}
+
+@mixin gradient($rad, $color1, $color2, $default) {
+    background: $default;  /* fallback for old browsers */
+    background: -webkit-linear-gradient($rad, $color1, $color2);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient($rad, $color1, $color2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+@mixin prefix() {
+    content: "";
+    position: absolute;
+}
+
+@mixin flipx() {
+  transform-origin: center center;
+  -webkit-transform-origin: center center;
+  -moz-transform-origin: center center;
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+@mixin flipy() {
+  transform-origin: center center;
+  -webkit-transform-origin: center center;
+  -moz-transform-origin: center center;
+  -webkit-transform: rotateX(180deg);
+  transform: rotateX(180deg);
+}
+
+@mixin flipIfMobile {
+    @if $direction == rtl {
+        @include flipx()
+    }
+}
+
+@mixin center() {
+    position: absolute;
+    #{$left}: 50%;
+    top: 50%;
+    transform: translate3d(#{-50% * $dx }, -50%, 0);
+}
+
+@mixin centerx() {
+    #{$left}: 50%;
+    transform: translateX(#{ -50% * $dx });
+    -webkit-transform: translateX(#{ -50% * $dx });
+}
+
+@mixin centery() {
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+}
+
+@mixin flex() {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+@mixin alignItems($align) {
+    -webkit-box-align: $align;
+    -ms-flex-align: $align;
+    align-items: $align;
+}
+
+@mixin justifyContentBetwen() {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+@mixin justifyContentEnd() {
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+        justify-content: flex-end;
+}
+
+@mixin justifyContentCenter() {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+@mixin flexWrap() {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+@mixin flexWidth($w) {
+    flex: 0 0 $w;
+    max-width: $w;
+    width: 100%;
+}
+
+@mixin bringChildsToFront($z: 2) {
+    & > * {
+        position: relative;
+        z-index: $z;
+    }
+}
+
+@mixin overlay($zIndex: 2, $opacity: 0.7, $bg: #000) {
+    background: $bg;
+    opacity: $opacity;
+    z-index: $zIndex;
+    position: absolute;
+    content: "";
+    @include pos(0,0,0,0);
+}
+
+@mixin bg-effect ($bg-pos, $bg-repeat, $bg-size, $variant:1) {
+    @if $variant == 2 {
+        background-image: url('../images/trace-effect.png');
+    }@else{
+        background-image: url('../images/trace-left.png');
+    }
+    background-size: $bg-size;
+    background-position: $bg-pos;
+    background-repeat: $bg-repeat;  
+}
+
+@mixin cp-prefix($property, $value, $prefixes) {
+    @each $prefix in $prefixes {
+      -#{$prefix}-#{$property}: $value;
+    }
+    #{$property}: $value;
+}
+
+@mixin boxshadow-for-png($value) {
+        @include cp-prefix(filter, $value, webkit moz)
+}
+
+@mixin fontawesome{
+    font-family: "Font Awesome 5 Free";
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+    font-weight: 900;
+}
+
+@mixin boxshadow($leval:1) {
+    @if $leval==1 {
+        box-shadow: rgba(0,0,0,0.055) 0 0 2px;
+        -webkit-box-shadow: rgba(0,0,0,0.055) 0 0 2px;
+    }
+    @else if $leval == 2{
+        box-shadow: rgba(0,0,0,.2) 0 0px 4px;
+        -webkit-box-shadow: rgba(0,0,0,.2) 0 0px 4px;
+    }
+    @else if $leval == 3{
+        box-shadow: rgba(0,0,0,.1) 8px 10px 30px 0px;
+    -webkit-box-shadow: rgba(0,0,0,.1) 8px 10px 30px 0px;
+    }
+    @else if $leval == 4{
+        box-shadow: rgba(0,0,0,.2) 0px 10px 30px 0px;
+        -webkit-box-shadow: rgba(0,0,0,.2) 0px 10px 30px 0px;
+    }
+    @else if $leval == 5{
+        box-shadow: rgba(0,0,0,.3) 8px 10px 37px 0px;
+        -webkit-box-shadow: rgba(0,0,0,.3) 8px 10px 37px 0px;
+    }
+}
+
+@mixin lineBefore($w:35px, $h:5px) {
+        position: absolute;
+        bottom: 6px;
+        #{$left}: 0;
+        content: "";
+        height: $h;
+        width: $w;
+        background-color: $secondary;
+        opacity: 1;
+        z-index: 1;
+}
+@mixin cirlce($w) {
+        width: $w;
+        height: $w;
+        line-height: $w;
+        text-align: center;
+}

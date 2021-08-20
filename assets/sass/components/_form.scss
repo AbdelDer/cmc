@@ -1,0 +1,98 @@
+.form-control,
+.custom-select{
+    border: 1px solid transparent;
+    border-radius: 20px;
+    background-color: #e6e9ee;
+    height: 40px;
+    padding: 8px 15px;
+    color: #323B46;
+    @extend %transition-med;
+
+    
+    &::placeholder{
+        font-size: 14px;
+        font-weight: 500;
+        color: #323B46;
+    }
+    &:focus{
+        background-color: #e6e9ee;
+        &::placeholder{
+            opacity: 0;
+        }
+        border-color: $primary;
+        box-shadow: none;
+        -webkit-box-shadow: none;
+    }
+    
+}
+
+.custom-select{
+    background-image: url('../images/select-arrow-down.png');
+    background-size: auto;
+    background-position-x: $right 0.75rem;;
+}
+
+.date-feild-wrapper{
+    position: relative;
+    &::after{
+        position: absolute;
+        content: "\f073";
+        font-size: 0.8rem;
+        @include fontawesome; 
+        #{$right}: 10px;
+        font-weight: 400;
+        z-index: 2;
+        top: 8px;
+        color: $secondary;
+        @include cirlce(25px);
+        border-radius: 50%;
+        background: #FFF;
+    }
+}
+
+.custom-radio{
+    .custom-control-label{
+        // &::after,
+        font-size: 14px;
+        font-weight: 500;
+        padding-top: 4px;
+        cursor: pointer;
+        &::before{
+            width: 20px;
+            height: 20px;
+            background: #e6e9ee;
+            border-color: #e6e9ee;
+            #{$left}: -1.5rem;
+            #{$right}: auto;
+
+        }
+
+        &::after{
+            
+            width: 10px;
+            height: 10px;
+            border-radius: 10px;
+            top: 9px;
+            #{$right}: auto;
+            
+            @if $direction == rtl {
+                #{$left}: -22px;;
+            }@else{
+                #{$left}: -19px;
+            }
+        }
+    }
+    .custom-control-input{
+        &:checked{
+            & + .custom-control-label{
+                &::before{
+                    background: #e6e9ee;
+                    border-color: #e6e9ee;
+                }
+                &::after{
+                    background: #00BDBB!important;
+                }
+            }
+        }
+    }
+}

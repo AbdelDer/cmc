@@ -1,0 +1,39 @@
+.sec-header{
+    color: $blue;
+    @include fontFamily(500);
+    font-size: 40px;
+    strong{
+        @include fontFamily(700);
+    }
+}
+
+.chiffre-cle{
+    background: #F7F7F7;
+    padding: 100px 0;
+    .items{
+        .item{
+            text-align: left;
+            max-width: 130px;
+            margin: auto;
+            .icon{
+                height: 65px;
+                width: 65px;
+                @extend %display-flex;
+                // margin: auto;
+                @include alignItems(center);
+                img{
+                    max-width: 100%;
+                }
+            }
+            .number{
+                color: #E48B25;
+                font-size: 50px;
+                @include fontFamily(800);
+            }
+            .title{
+                font-size: 20px;
+                line-height: 1.3;
+            }
+        }
+    }
+}

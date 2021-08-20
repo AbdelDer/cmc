@@ -1,0 +1,40 @@
+$primary: #E48B25;
+$primary-dark: #d37d1a;
+$secondary: #1ab9ff;
+$secondary-dark: #13a3e0;
+$yellow: #ffc000;
+$green: #abcd52;
+$blue: #2B9CB8;
+$move: #eb4ba5;
+$headerHeight: 55px;
+$sidebarWidth: 220px;
+
+$left: left;
+$right: right;
+$direction: rtl;
+$dx: 1;
+$mode: 'dev';
+
+$font-familly: 'brandon grotesque normal', sans-serif;
+$font-familly2: 'brandon grotesque normal', sans-serif;
+
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semi-bold: 600;
+$font-weight-bold: 700;
+$font-weight-extra-bold: 700;
+
+$grid-breakpoints: (
+  // Extra small screen / phone
+  xs: 0,
+  // Small screen / phone
+  sm: 576px,
+  // Medium screen / tablet
+  md: 768px,
+  // Large screen / desktop
+  lg: 992px,
+  // Extra large screen / wide desktop
+  xl: 1200px,
+  xxl: 1400px,
+);
+

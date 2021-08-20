@@ -1,0 +1,27 @@
+.about-hp{
+    padding-top: 100px;
+    .left-img{
+        margin-top: -45px;
+        max-width: 95%;
+    }
+    .content{
+        h2{
+            font-size: 40px;
+            color: $blue;
+            @include fontFamily(800);
+            line-height: 1.2;
+        }
+        p{
+            font-size: 18px;
+            line-height: 1.4;
+            strong{
+                @include fontFamily(700);
+            }
+        }
+        .btn-inscription{
+            margin-top: 30px;
+            border-radius: 0px;
+            font-size: 18px;
+        }
+    }
+}

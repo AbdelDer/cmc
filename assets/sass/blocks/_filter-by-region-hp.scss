@@ -1,0 +1,65 @@
+.region-filter{
+    background-color: #2B9CB8;
+    .left-filter{
+        padding-top: 60px;
+        padding-bottom: 60px;
+        .map-container{
+            width: 550px;
+            height: 550px;
+            margin: auto;
+            .img{
+                height: auto;
+            }
+        }
+    }
+    .region-detail{
+        padding-top: 60px;
+        padding-bottom: 60px;
+
+    }
+    .block-header{
+        margin-bottom: 50px;
+        .sec-header{
+            color: #FFF;
+        }
+        .sub-title{
+            color: #FFF;
+            font-size: 22px;
+        }
+    }
+    .slider{
+        .slick-list{
+            padding: 40px;
+        }
+        .slide-item{
+            background-color: #FFF;
+            padding: 30px 20px;
+            @extend %boxshadow_4x;
+            margin: 20px;
+            width: 350px;
+            .title{
+                font-size: 25px;
+                @include fontFamily(700);
+                color: $primary;
+                margin-bottom: 20px;
+            }
+            .infos{
+                list-style: none;
+                li{
+                    margin-bottom: 10px;
+                    font-size: 18px;
+                    img{
+                        width: 20px;
+                        display: inline-block;
+                    }
+                }
+            }
+            .btn-more{
+                margin-top: 30px;
+                padding: 14px 14px;
+                font-size: 12px;
+                text-transform: uppercase;
+            }
+        }
+    }
+}

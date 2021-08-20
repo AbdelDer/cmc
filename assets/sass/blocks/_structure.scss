@@ -1,0 +1,6 @@
+.structure-hp{
+    background: #F7F7F7;
+    .img-container{
+        @extend %boxshadow_4x;
+    }
+}

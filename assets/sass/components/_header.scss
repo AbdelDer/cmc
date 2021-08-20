@@ -1,0 +1,106 @@
+.top-header{
+    background-color: $primary;
+    color: #FFF;
+    padding: 5px 0;
+    p{
+        margin: 0;
+        color: #FFF;
+        font-size: 24px;
+    }
+    .btn-inscr{
+        color: $primary;
+        margin-left: 5px;
+        text-transform: uppercase;
+        @include fontFamily(600);
+        font-size: 13px;
+    }
+}
+
+.navbar{
+    background-color: transparent!important;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    z-index: 500;
+    .navbar-brand{
+        max-width: 250px;
+        z-index: 3;
+    }
+    
+    .navbar-collapse{
+        width: 100%;
+    }
+    .contextual{
+
+    }
+    .navbar {
+        padding: 0;
+        width: 100%;
+    }
+    .navbar-nav{
+        margin-left: auto;
+        padding-left: 50px;
+        @include justifyContentEnd();
+        .nav-item{
+            margin-left: 10px;
+            .nav-link{
+                font-weight: 500;
+                font-size: 16px;
+                // text-transform: uppercase;
+                padding: 8px 25px 8px 2px;
+                border-radius: 20px;
+                color: #222;
+                position: relative;
+                &::before{
+                    @include prefix();
+                    left: 0;
+                    height: 1px;
+                    width: calc(100% - 23px);
+                    bottom: 0;
+                    background: #222;
+                    transform-origin: left center;
+                    -webkit-transform-origin: left center;
+                    transform: scaleX(0);
+                    -webkit-transform: scaleX(0);
+                    @extend %transition-med;
+                }
+
+                &.is-active,
+                &.active,
+                &:hover
+                {
+                    color: #000;
+                    &::before{
+                        transform: scaleX(1);
+                    }
+
+                }
+            }
+        }
+    }
+    .btn-inscription{
+        background: none;
+        border: 1px solid $primary;
+        border-radius: 0;
+        padding: 8px 15px;
+        color: $primary;
+        font-size: 17px;
+        line-height: 1.2;
+        margin-right: 30px;
+        &:hover{
+            background: $primary;
+            color: #FFF;
+        }
+    }
+    .btn-search{
+        background: none;
+        border: 0;
+        padding: 0;
+        color: $primary;
+        font-size: 30px;
+    }
+
+  nav#block-mainnavigation{
+    width: 100%;
+  }
+}

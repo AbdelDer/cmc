@@ -1,0 +1,39 @@
+.actualite-hp{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-origin: center;
+    .item{
+        background: #FFF;
+        @extend %boxshadow_4x;
+        @extend %transition-slew;
+        padding: 10px;
+        .details{
+            margin-top: 15px;
+            .date{
+                font-size: 17px;
+            }
+            .tag{
+                background: $blue;
+                color: #FFF;
+                display: inline-block;
+                padding: 0 5px;
+            }
+            .title{
+                margin-top: 10px;
+                text-transform: uppercase;
+                @include fontFamily(700);
+                font-size: 19px;
+            }
+            p{
+                line-height: 1.5;
+                font-size: 18px;
+                a{
+                    color: $blue;
+                }
+            }
+        }
+        &:hover{
+            @extend %boxshadow_2x;
+        }
+    }
+}

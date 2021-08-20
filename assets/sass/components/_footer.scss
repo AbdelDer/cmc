@@ -1,0 +1,75 @@
+.footer{
+  background-color: #222;
+  background-image: url("../images/footer-mask-2.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  position: relative;
+  & > * {
+    position: relative;
+    z-index: 2;
+  }
+  &::before{
+    @include overlay(1, .8);
+    
+  }
+  .footer-logo{
+    display: block;
+    max-width: 300px;    
+  }
+  ul.menu{
+    list-style: none;
+    margin: 0;
+    @extend %display-flex;
+    @include justifyContentEnd();
+    li{
+      a{
+        display: inline-block;
+        padding: 4px 10px 4px 10px;
+        color: #FFF;
+        text-decoration: none;
+        font-size: 18px;
+        position: relative;
+        &:hover{
+          color: $primary;
+        }
+      }
+    }
+  }
+
+  .rs{
+    list-style: none;
+    margin: 0;
+    text-align: right;
+    li{
+      display: inline-block;
+      margin-left: 40px;
+      a{
+        display: inline-block;
+        font-size: 1.6rem;
+        margin-right: 5px;
+        color: #FFF;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        img{
+          max-width: 100%;
+        }
+        &:hover{
+          opacity: .9;
+          color: $primary;
+        }
+      }
+    }
+  }
+
+  .btm-footer{
+    padding-top: 150px;
+    .copyright{
+      color: #FFF;
+    }
+  }
+
+}

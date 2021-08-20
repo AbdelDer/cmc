@@ -1,0 +1,72 @@
+
+
+//========================================
+//== ARABIC FONTS
+//========================================
+
+@font-face {
+    font-family: 'brandon grotesque bold';
+    font-style: normal;
+    font-weight: bold;
+    src: url('../fonts/Brandon-Grotesque/brandon-grotesque-black.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'brandon grotesque extra light';
+    font-style: normal;
+    font-weight: 200;
+    src: url('../fonts/Brandon-Grotesque/brandon-grotesque-light.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'brandon grotesque medium';
+    font-style: 500;
+    font-weight: bold;
+    src: url('../fonts/Brandon-Grotesque/brandon-grotesque-medium-italic.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'brandon grotesque normal';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/Brandon-Grotesque/brandon-grotesque-regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'brandon grotesque light';
+    font-style: normal;
+    font-weight: 300;
+    src: url('../fonts/Brandon-Grotesque/brandon-grotesque-light.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'brandon grotesque semibold';
+    font-style: normal;
+    font-weight: bold;
+    src: url('../fonts/Brandon-Grotesque/brandon-grotesque-black.otf') format('opentype');
+}
+
+
+@mixin fontFamily($weight:400) {
+    @if $weight == 400 {
+        font-family: 'brandon grotesque normal',sans-serif;
+    }
+    @else if $weight == 100{
+        font-family: 'brandon grotesque extra light',sans-serif;
+    }
+    @else if $weight == 200{
+        font-family: 'brandon grotesque light',sans-serif;
+    }
+    @else if $weight == 700{
+        font-family: 'brandon grotesque bold',sans-serif;
+    }
+    @else if $weight == 800{
+        font-family: 'brandon grotesque bold',sans-serif;
+    }
+    @else if $weight == 500{
+        font-family: 'brandon grotesque medium',sans-serif;
+    }
+    @else if $weight == 600{
+        font-family: 'brandon grotesque semibold',sans-serif;
+    }
+}
