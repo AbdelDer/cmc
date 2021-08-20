@@ -1,0 +1,58 @@
+.notre-mission{
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    .highlight-block{
+        padding: 40px 50px;
+        margin-top: 20px;
+        position: relative;
+        @include bringChildsToFront(3);
+        background-position: center center;
+        background-color: $blue;
+        color: #FFF;
+        &::after{
+            // @include overlay($bg: $blue, $zIndex: 1, $opacity: .6);
+            @include pos(0, 0, 0, 0);
+        }
+        p{
+            font-size: 18px;
+            line-height: 1.4;
+            margin-bottom: 25px;
+            color: inherit;
+        }
+
+        .sec-header{
+            color: #FFF;
+        }
+        
+        .bordered{
+            position: relative;
+            padding-left: 20px;
+            &::before{
+                content: "";
+                position: absolute;
+                left: 0px;
+                top: 10px;
+                height: 90%;
+                width: 5px;
+                background: #FFF;
+            }
+
+        }
+        
+        blockquote{
+            color: inherit;
+            text-transform: uppercase;
+            @include fontFamily(700);
+            font-size: 24px;
+            &::before{
+                content: "« ";
+            }
+            &::after{
+                content: " »";
+            }
+        }
+
+        
+    }
+}

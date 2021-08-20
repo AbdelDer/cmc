@@ -1,0 +1,38 @@
+.notre-vision{
+    padding-bottom: 20px;
+
+    .highlight-block{
+        background: #F5F5F5;
+        padding: 40px 50px;
+        margin-top: 20px;
+        position: relative;
+        p{
+            font-size: 18px;
+            line-height: 1.4;
+            margin-bottom: 25px;
+        }
+
+        blockquote{
+            text-transform: uppercase;
+            color: $blue;
+            @include fontFamily(700);
+            font-size: 24px;
+            &::before{
+                content: "« ";
+            }
+            &::after{
+                content: " »";
+            }
+        }
+
+        &::before{
+            content: "";
+            position: absolute;
+            left: 30px;
+            top: 50px;
+            height: 48%;
+            width: 5px;
+            background: #CBCBCB;
+        }
+    }
+}

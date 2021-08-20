@@ -1,0 +1,109 @@
+.notre-valeur{
+    padding-top: 20px;
+    padding-bottom: 100px;
+
+    .nv-tabs{
+        position: relative;
+        margin-top: 30px;
+        .nav-tabs{
+            text-align: center;
+            @include alignItems(center);
+            margin-left: -15px;
+            margin-right: -15px;
+            border-bottom: 0;
+            padding-bottom: 15px;
+            position: relative;
+            &::before{
+                content: "";
+                position: absolute;
+                bottom: 0px;
+                left: 15px;
+                right: 15px;
+                height: 5px;
+                background: $primary;
+            }
+
+            .nav-item{
+                border: 0;
+                @include flexWidth(25%);
+                padding: 0 15px;
+            }
+            .nav-link{
+                border: 0;
+                width: 150px;
+                background: #F5F5F5;
+                width: 100%;
+                padding: 20px;
+                color: #222;
+                position: relative;
+                .icon{
+                    display: block;
+                    text-align: center;
+                    height: 70px;
+                    img{
+                        max-width: 70px;
+                        max-height: 70px;
+                    }
+                }
+                .title{
+                    display: inline-block;
+                    margin-top: 15px;
+                    text-transform: uppercase;
+                    font-size: 16px;
+                }
+
+                &::before{
+                    content: "";
+                    position: absolute;
+                    bottom: -10px;
+                    left: 0;
+                    right: 0;
+                    height: 10px;
+
+                    background: transparent;
+                    @extend %transition-med;
+                }
+
+                &.active{
+                    background: $primary;
+                    color: #FFF;
+                    .icon{
+                        img{
+                            filter: brightness(0) invert(1);
+                        }
+                    }
+                    &::before{
+                        background: $primary;
+                    }
+
+                    & > {
+                        color: inherit;
+                    }
+                }
+            }
+        }
+        p{
+            font-size: 18px;
+            line-height: 1.4;
+            margin-bottom: 25px;
+            color: inherit;
+        }
+
+        .sec-header{
+            color: #FFF;
+        }
+
+        
+    }
+
+    .tab-content{
+        padding: 50px 30px;
+        background: #FFF;
+        @extend %boxshadow_3x;
+        p{
+            font-size: 18px;
+            color: #000;
+            @include fontFamily(500);
+        }
+    }
+}
